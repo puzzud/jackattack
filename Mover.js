@@ -14,7 +14,7 @@ Mover.prototype.update = function(dt)
   this.entity.setPosition(position);
 };
 */
-
+/*
 function Mover(app)
 {
 	var ScriptObject = function(entity)
@@ -38,3 +38,24 @@ Mover.prototype.update = function(dt)
 };
 
 pc.script.create("mover", Mover);
+*/
+
+pc.script.create("mover", function (app) {
+    var ScriptObject = function (entity) {
+        this.entity = entity;
+    };
+
+    ScriptObject.prototype = {
+        initialize: function () {
+
+        },
+
+        update: function (dt) {
+		var position = this.entity.getPosition();
+		position.x += dt * 0.15;
+		this.entity.setPosition(position);
+        }
+    };
+
+    return ScriptObject;
+});
