@@ -40,22 +40,21 @@ Mover.prototype.update = function(dt)
 pc.script.create("mover", Mover);
 */
 
-var Mover = function (entity) {
-        this.entity = entity;
-    };
+var Mover = function (entity)
+{
+	this.entity = entity;
+};
 
-    Mover.prototype = {
-        initialize: function () {
+Mover.prototype.initialize = function()
+{
+	
+};
 
-        },
+Mover.prototype.update = function(dt)
+{
+	var position = this.entity.getPosition();
+	position.x += dt * 0.15;
+	this.entity.setPosition(position);
+};
 
-        update: function (dt) {
-		var position = this.entity.getPosition();
-		position.x += dt * 0.15;
-		this.entity.setPosition(position);
-        }
-    };
-
-pc.script.create("mover", function (app) {
-    return Mover;
-});
+pc.script.create("mover", function(app){return Mover;});
