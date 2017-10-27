@@ -40,12 +40,11 @@ Mover.prototype.update = function(dt)
 pc.script.create("mover", Mover);
 */
 
-pc.script.create("mover", function (app) {
-    var ScriptObject = function (entity) {
+var Mover = function (entity) {
         this.entity = entity;
     };
 
-    ScriptObject.prototype = {
+    Mover.prototype = {
         initialize: function () {
 
         },
@@ -57,5 +56,6 @@ pc.script.create("mover", function (app) {
         }
     };
 
-    return ScriptObject;
+pc.script.create("mover", function (app) {
+    return Mover;
 });
