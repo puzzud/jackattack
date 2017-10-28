@@ -1,5 +1,6 @@
 var Mover = function(entity)
 {
+    this.app = entity._app;
 	this.entity = entity;
 };
 

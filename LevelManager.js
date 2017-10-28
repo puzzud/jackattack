@@ -1,5 +1,6 @@
 var LevelManager = function(entity)
 {
+    this.app = entity._app;
 	this.entity = entity;
 };
 
@@ -25,7 +26,7 @@ LevelManager.prototype.endTurnCauseText =
 ];
 
 LevelManager.prototype.initialize = function()
-{
+{   
     this.map = [];
     //this.tileXOffset = 0;
     this.movers = [];
